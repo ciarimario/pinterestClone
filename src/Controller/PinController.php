@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\PinRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,12 +10,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class PinController extends AbstractController
 {
     /**
-     * @Route("/pin", name="pin")
+     * @Route("/", name="pin")
      */
-    public function index(): Response
+    public function index(PinRepository $pinRepository): Response
     {
         return $this->render('pin/index.html.twig', [
-            'controller_name' => 'PinController',
+            'allPins' => $pinRepository->findAll(),
         ]);
     }
 }
