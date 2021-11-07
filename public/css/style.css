@@ -1,0 +1,61 @@
+.info {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.info-icons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.info-icons i {
+  color: rgb(5, 5, 5);
+  background: rgb(218, 217, 217);
+  height: 40px;
+  width: 40px;
+  margin-left: 1em;
+  line-height: 40px;
+  text-align: center;
+  opacity: 0.6;
+  border-radius: 50%;
+  transition: ease-in-out All 0.1s;
+  cursor: pointer;
+}
+
+.info-icons i:hover {
+  background: rgb(253, 253, 253);
+  color: rgb(10, 10, 10);
+}
+
+.info-icons:hover .pin-img {
+  filter: brightness(0.7);
+}
+.info-icons i:hover .pin-img {
+  filter: brightness(0.7);
+}
+
+.container-info:hover .info-icons {
+  opacity: 1;
+}
+
+.pin-img {
+  opacity: 1;
+  transition: ease-in-out 0.2s all;
+}
+
+.pin-img:hover {
+  filter: brightness(0.7);
+}
+
+.container-info:hover .info {
+  opacity: 1;
+}

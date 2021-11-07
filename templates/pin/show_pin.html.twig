@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title pin.title  %}
+
+
+{% block body %}
+	<h1>Voici le Pin</h1>
+	<div class="container d-flex">
+		<div class="card">
+
+			<h1>{{pin.title}}</h1>
+			<h2>{{pin.description}}</h2>
+			<em>Ajouté le
+				{{ pin.createdAt | date('d/m/y') }}</em>
+		</div>
+	</div>
+{% endblock %}

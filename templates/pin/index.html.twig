@@ -4,12 +4,29 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<ul>
+	<section class="container">
+		<div class="row justify-content-center">
 			{% for pin in allPins %}
-				<li>{{ pin.title }}</li>
-				<li>{{ pin.description }}</li>
-			{% endfor %}
-		</ul>
+				<div class="col-lg-3  card m-2 p-0 m-0 overflow-hidden rounded-3 border-0">
+					<div class="container-info position-relative">
+						<a href="{{ path('show_pin',{id:pin.id}) }}"><img class="pin-img card-img-top rounded " src="{{ pin.image }}"></img>
+					</a>
+					<div class="info">
+						<button class="btn btn-danger rounded">Enregistrer</button>
+					</div>
+					<div class="info-icons">
+						<i class="fab fa-instagram"></i>
+						<i class="fas fa-download"></i>
+					</div>
+				</div>
+				<div class="card-content p-3">
+					<h3>{{ pin.title }}</h3>
+					<p>{{ pin.description | u.truncate(50,true) }}
+						...</p>
+					<a class="btn btn-dark" href="{{ path('show_pin',{id:pin.id}) }}">Voir le Pin</a>
+				</div>
+
+			</div>
+		{% endfor %}
 	</div>
-{% endblock %}
+</section>{% endblock %}
